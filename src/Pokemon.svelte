@@ -22,7 +22,7 @@
     width: 100%;
     justify-content: center;
     border: 1px solid gainsboro;
-    border-radius:2px;
+    border-radius: 2px;
   }
 
   div.pokemon > .header {
@@ -36,12 +36,11 @@
   }
 
   div.pokemon div.body {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
     border-top: 1px solid gainsboro;
-
   }
 </style>
 
@@ -49,7 +48,10 @@
   <div class="pokemon">
     <div class="header">
       <h1>{poke.name.toUpperCase()}</h1>
-      <PokemonTypes types={pokeData.types.sort((a,b) => (a.slot > b.slot) ? 1 : ((b.slot > a.slot) ? -1 : 0))} />
+      <PokemonTypes
+        types={pokeData.types.sort((a, b) =>
+          a.slot > b.slot ? 1 : b.slot > a.slot ? -1 : 0
+        )} />
     </div>
     <div class="body">
       <!-- component for stats -->
