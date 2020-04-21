@@ -26,11 +26,11 @@
   }
 
   ul li {
-    flex:1;
+    flex: 1;
     list-style: none;
     padding: 1rem;
-    min-width:17rem;
-    max-width:17rem;
+    min-width: 17rem;
+    max-width: 17rem;
   }
 </style>
 

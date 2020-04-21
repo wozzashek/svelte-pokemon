@@ -1,6 +1,6 @@
 div.pokemon.svelte-lvclbq.svelte-lvclbq{display:flex;flex-direction:column;width:100%;justify-content:center;border:1px solid gainsboro;border-radius:2px}div.pokemon.svelte-lvclbq>.header.svelte-lvclbq{text-align:center;padding:0 1rem}img.pokemon-image.svelte-lvclbq.svelte-lvclbq{width:9rem;height:auto}div.pokemon.svelte-lvclbq div.body.svelte-lvclbq{display:flex;flex-direction:column;align-items:center;padding:1rem;border-top:1px solid gainsboro}
 img.pokemon-img.svelte-1a4go4r.svelte-1a4go4r{width:3rem;height:auto;margin-bottom:1rem}ul.stats.svelte-1a4go4r.svelte-1a4go4r{list-style:none;padding:0;display:flex}ul.stats.svelte-1a4go4r li.svelte-1a4go4r{flex:1 0 0}
 ul.type-list.svelte-hbtpvs.svelte-hbtpvs{padding:0;margin:1rem 0;display:flex;align-items:center;justify-content:center;width:100%}ul.type-list.svelte-hbtpvs li.svelte-hbtpvs{list-style:none;flex:0 1 5rem;padding:3px;background-color:#efefef;text-align:center;margin-right:0.5rem}ul.type-list.svelte-hbtpvs li.svelte-hbtpvs:last-child{margin-right:0}
-ul.svelte-1qxptqm.svelte-1qxptqm{margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-evenly;align-content:space-evenly}ul.svelte-1qxptqm li.svelte-1qxptqm{flex:1;list-style:none;padding:1rem;min-width:17rem;max-width:17rem}
+ul.svelte-1u6ozti.svelte-1u6ozti{margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-evenly;align-content:space-evenly}ul.svelte-1u6ozti li.svelte-1u6ozti{flex:1;list-style:none;padding:1rem;min-width:17rem;max-width:17rem}
 
 /*# sourceMappingURL=bundle.css.map */

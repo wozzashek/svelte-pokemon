@@ -1213,7 +1213,7 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "loading...";
     			attr_dev(p, "class", "loading");
-    			add_location(p, file$3, 46, 2, 765);
+    			add_location(p, file$3, 46, 2, 768);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1261,8 +1261,8 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(ul, "class", "svelte-1qxptqm");
-    			add_location(ul, file$3, 38, 2, 651);
+    			attr_dev(ul, "class", "svelte-1u6ozti");
+    			add_location(ul, file$3, 38, 2, 654);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -1353,8 +1353,8 @@ var app = (function () {
     			li = element("li");
     			create_component(pokemon.$$.fragment);
     			t = space();
-    			attr_dev(li, "class", "svelte-1qxptqm");
-    			add_location(li, file$3, 40, 6, 691);
+    			attr_dev(li, "class", "svelte-1u6ozti");
+    			add_location(li, file$3, 40, 6, 694);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
