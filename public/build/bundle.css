@@ -1,0 +1,6 @@
+div.pokemon.svelte-1wampsb.svelte-1wampsb{display:flex;flex-direction:column;width:100%;justify-content:center;border:1px solid gainsboro;border-radius:2px}div.pokemon.svelte-1wampsb>.header.svelte-1wampsb{text-align:center;padding:0 1rem}img.pokemon-image.svelte-1wampsb.svelte-1wampsb{width:9rem;height:auto}
+ul.stats.svelte-wtv9gr.svelte-wtv9gr{list-style:none;padding:0;display:flex}ul.stats.svelte-wtv9gr li.svelte-wtv9gr{flex:1 0 0}
+ul.type-list.svelte-hbtpvs.svelte-hbtpvs{padding:0;margin:1rem 0;display:flex;align-items:center;justify-content:center;width:100%}ul.type-list.svelte-hbtpvs li.svelte-hbtpvs{list-style:none;flex:0 1 5rem;padding:3px;background-color:#efefef;text-align:center;margin-right:0.5rem}ul.type-list.svelte-hbtpvs li.svelte-hbtpvs:last-child{margin-right:0}
+ul.svelte-1qxptqm.svelte-1qxptqm{margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-evenly;align-content:space-evenly}ul.svelte-1qxptqm li.svelte-1qxptqm{flex:1;list-style:none;padding:1rem;min-width:17rem;max-width:17rem}
+
+/*# sourceMappingURL=bundle.css.map */
