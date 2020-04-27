@@ -1,18 +1,16 @@
 <script>
-  import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
   import PokemonData from "./PokemonData.svelte";
   import PokemonTypes from "./PokemonTypes.svelte";
 
   export let poke;
-  let pokeData;
+  let pokeData = {};
 
-  onMount(async () => {
-    await fetch(poke.url)
-      .then(r => r.json())
-      .then(data => {
-        pokeData = data;
-      });
-  });
+  $: dataPromise = fetch(poke.url)
+    .then(r => r.json())
+    .then(data => {
+      pokeData = data || null;
+    });
 </script>
 
 <style>
@@ -44,23 +42,26 @@
   }
 </style>
 
-{#if pokeData}
-  <div class="pokemon">
-    <div class="header">
-      <h1>{poke.name.toUpperCase()}</h1>
-      <PokemonTypes
-        types={pokeData.types.sort((a, b) =>
-          a.slot > b.slot ? 1 : b.slot > a.slot ? -1 : 0
-        )} />
-    </div>
-    <div class="body">
-      <!-- component for stats -->
-      <img
-        class="pokemon-image"
-        src="https://pokeres.bastionbot.org/images/pokemon/{pokeData.id}.png"
-        alt="{poke.name.toUpperCase()} image" />
-    </div>
+{#await dataPromise}
+  <h3>Loading...</h3>
+{:then}
+  <div class="pokemon" transition:fly={{ y: 200, duration: 2000 }}>
+    {#if pokeData}
+      <div class="header">
+        <h1>{poke.name.toUpperCase()}</h1>
+        <PokemonTypes
+          types={pokeData.types.sort((a, b) =>
+            a.slot > b.slot ? 1 : b.slot > a.slot ? -1 : 0
+          )} />
+      </div>
+      <div class="body">
+        <!-- component for stats -->
+        <img
+          class="pokemon-image"
+          src="https://pokeres.bastionbot.org/images/pokemon/{pokeData.id}.png"
+          alt="{poke.name.toUpperCase()} image" />
+      </div>
+    {/if}
+
   </div>
-{:else}
-  <p class="loading">loading...</p>
-{/if}
+{/await}

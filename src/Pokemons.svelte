@@ -4,15 +4,28 @@
 
   //will hold all the data
   let pokemons;
+  let limit = 20;
+  let offset = 0;
+  let next;
 
-  onMount(async () => {
-    await fetch("https://pokeapi.co/api/v2/pokemon?&offset=0")
-      .then(r => r.json())
-      .then(data => {
-        console.log(data);
-        pokemons = data.results;
-      });
-  });
+  $: promise = fetch(
+    "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset
+  )
+    .then(r => r.json())
+    .then(d => {
+      pokemons = d;
+      next = d.next;
+    });
+
+  function handleNext() {
+    offset += 20;
+    limit = offset > 131 ? 11 : 20;
+  }
+
+  function handlePrev() {
+    limit = 20;
+    offset -= 20;
+  }
 </script>
 
 <style>
@@ -21,8 +34,6 @@
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-evenly;
   }
 
   ul li {
@@ -31,18 +42,34 @@
     padding: 1rem;
     min-width: 17rem;
     max-width: 17rem;
+    transition: all 5s;
+  }
+
+  li.ctrl > div {
+    background: #fbfbfb;
+    text-align: center;
+    max-width: 10rem;
   }
 </style>
 
-{#if pokemons}
-
+{#await promise}
+  <h1>loading...</h1>
+{:then pokeData}
   <ul>
-    {#each pokemons as poke}
+    {#if offset > 0}
+      <li class="ctrl ctrl-prev">
+        <div on:click={handlePrev}>PREV</div>
+      </li>
+    {/if}
+    {#each pokemons.results as poke}
       <li>
         <Pokemon {poke} />
       </li>
     {/each}
+    {#if offset < 131}
+      <li class="ctrl ctrl-next">
+        <div on:click={handleNext}>NEXT</div>
+      </li>
+    {/if}
   </ul>
-{:else}
-  <p class="loading">loading...</p>
-{/if}
+{/await}
