@@ -1,4 +1,5 @@
 <script>
+  import { fly, fade } from "svelte/transition";
   import { onMount } from "svelte";
   import Pokemon from "./Pokemon.svelte";
 
@@ -13,6 +14,7 @@
   )
     .then(r => r.json())
     .then(d => {
+      pokemons = {};
       pokemons = d;
       next = d.next;
     });
@@ -42,7 +44,7 @@
     padding: 1rem;
     min-width: 17rem;
     max-width: 17rem;
-    transition: all 5s;
+    animation: fade 2s ease-out;
   }
 
   li.ctrl > div {
@@ -50,6 +52,15 @@
     text-align: center;
     max-width: 10rem;
   }
+
+  @keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 </style>
 
 {#await promise}
@@ -62,9 +73,9 @@
       </li>
     {/if}
     {#each pokemons.results as poke}
-      <li>
-        <Pokemon {poke} />
-      </li>
+        <li>
+          <Pokemon {poke} />
+        </li>
     {/each}
     {#if offset < 131}
       <li class="ctrl ctrl-next">

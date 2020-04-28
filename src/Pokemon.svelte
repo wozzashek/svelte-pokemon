@@ -1,5 +1,4 @@
 <script>
-  import { fly } from "svelte/transition";
   import PokemonData from "./PokemonData.svelte";
   import PokemonTypes from "./PokemonTypes.svelte";
 
@@ -45,7 +44,7 @@
 {#await dataPromise}
   <h3>Loading...</h3>
 {:then}
-  <div class="pokemon" transition:fly={{ y: 200, duration: 2000 }}>
+  <div class="pokemon">
     {#if pokeData}
       <div class="header">
         <h1>{poke.name.toUpperCase()}</h1>
